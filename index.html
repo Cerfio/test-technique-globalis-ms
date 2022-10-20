@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html manifest="site.manifest" lang="en">
+  <head>
+    <link
+      href="http://fonts.cdnfonts.com/css/helvetica-neue-9"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <script type="module" src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      const changeQueryParam = (param, value) => {
+        const url = new URL(window.location.href);
+        url.searchParams.set(param, value);
+        window.location.href = url.href;
+      };
+      const openDropdown = () => {
+        document
+          .getElementById("dropdown-content__wrapper__content__id")
+          .classList.toggle("dropdown-content__wrapper__content--show");
+      };
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = (event) => {
+        if (!event.target.matches(".no-close-dropdown")) {
+          const dropdowns = document.getElementsByClassName("dropdown-content");
+          for (let i = 0; i < dropdowns.length; i++) {
+            const openDropdown = dropdowns[i];
+            if (
+              openDropdown.classList.contains(
+                "dropdown-content__wrapper__content--show"
+              )
+            ) {
+              openDropdown.classList.remove(
+                "dropdown-content__wrapper__content--show"
+              );
+            }
+          }
+        }
+      };
+    </script>
+    <title>Test-Recrutement</title>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="container__dropdown no-close-dropdown"
+        onclick="openDropdown()"
+      >
+        <div class="container__dropdown__wrapper no-close-dropdown">
+          <p class="no-close-dropdown">Eyes Color</p>
+          <img
+            class="container__dropdown__wrapper__image no-close-dropdown"
+            src="assets/down-arrow.png"
+            alt="arrow down"
+          />
+        </div>
+        <div
+          id="dropdown-content__wrapper__content__id"
+          class="dropdown-content__wrapper__content"
+        >
+          <a
+            class="dropdown-content__wrapper__content__element"
+            href="?eyeColor=blue"
+            >Blue</a
+          >
+          <a
+            class="dropdown-content__wrapper__content__element"
+            href="?eyeColor=brown"
+            >Brown</a
+          >
+          <a
+            class="dropdown-content__wrapper__content__element"
+            href="?eyeColor=green"
+            >Green</a
+          >
+        </div>
+      </div>
+
+      <div onClick="changeQueryParam('age', 20)" class="container__select">
+        <p class="container__select__title">De 20 à 25 ans</p>
+      </div>
+      <div onClick="changeQueryParam('age', 26)" class="container__select">
+        <p class="container__select__title" href="?age=20">De 26 à 30 ans</p>
+      </div>
+      <div onClick="changeQueryParam('age', 31)" class="container__select">
+        <p class="container__select__title" href="?age=20">De 31 à 35 ans</p>
+      </div>
+      <div onClick="changeQueryParam('age', 36)" class="container__select">
+        <p class="container__select__title" href="?age=20">De 36 à 41 ans</p>
+      </div>
+    </div>
+    <div class="container__table" id="root"></div>
+  </body>
+</html>

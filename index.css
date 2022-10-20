@@ -1,0 +1,115 @@
+p {
+  margin: 0;
+}
+body {
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #0d0c22;
+  font-weight: 400;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+.container {
+  display: flex;
+}
+
+.container__dropdown__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: #e7e7e9;
+}
+
+.container__dropdown__wrapper:hover,
+.container__dropdown__wrapper:focus {
+  border-color: #feedf3;
+  -webkit-transition: border 100ms ease-in;
+  -moz-transition: border 100ms ease-in;
+  -o-transition: border 100ms ease-in;
+  transition: border 100ms ease-in;
+}
+
+.container__dropdown__wrapper__image {
+  width: 16px;
+  height: 16px;
+}
+
+.container__dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content__wrapper__content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content__wrapper__content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #0d0c22;
+}
+
+.container__select__title {
+  text-decoration: none;
+  display: block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.container__select {
+  border-radius: 8px;
+  max-width: fit-content;
+  padding: 8px;
+  cursor: pointer;
+}
+.container__table {
+  margin-top: 24px;
+}
+
+.container__select:hover {
+  background-color: #f3f3f4;
+}
+
+.dropdown-content__wrapper__content a:hover {
+  background-color: #e7e7e9;
+}
+
+.dropdown-content__wrapper__content--show {
+  display: block;
+}
