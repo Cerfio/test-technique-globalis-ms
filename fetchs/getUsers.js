@@ -1,4 +1,4 @@
-import { factoryRequest } from "./../modules/requestGenerator.js";
+import { factoryRequest } from "../utils/requestGenerator.js";
 
 const FETCH_USER_URL = "datas.json";
 
